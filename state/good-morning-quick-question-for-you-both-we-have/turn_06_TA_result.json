@@ -1,0 +1,4 @@
+{
+  "reply": "Confirmed — I almost never go past same-day on `flow_options_scans`. When an alert fires and I want intraday granularity, it's \"what happened today on this symbol's chain\" or occasionally \"what did yesterday's volume look like before today's OI settled.\" That's a 2-day window at most. I've never had a reason to pull raw scan data from a week ago.\n\nThe aggregate table idea is clean. That's basically what I end up computing manually anyway when I want \"how has this symbol's total options activity trended over the last few weeks\" — I'm grouping by symbol and trade_date and summing volume/OI every time. Having that pre-materialized would save me query time and make the raw table's retention irrelevant to my workflow.\n\n7 days on the raw scans sounds fine to me. Even 5 would probably work, but 7 gives a comfortable margin for weekend debugging if something looks off in Monday's data.",
+  "next": "SA"
+}
